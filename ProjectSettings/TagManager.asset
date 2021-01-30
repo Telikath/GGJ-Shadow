@@ -8,6 +8,9 @@ TagManager:
   - Music
   - Background
   - NoMask
+  - Rotative
+  - CastableShadow
+  - Miroir
   layers:
   - Default
   - TransparentFX
@@ -33,14 +36,14 @@ TagManager:
   - NoCollision
   - Background
   - Friendlies
-  - Invulnerable
   - PlatformsPlayerOnly
   - MidHeightOneWayPlatforms
   - Pushables
   - Stairs
-  - 
-  - 
-  - 
+  - CastableShadow
+  - Border
+  - Lamp
+  - Miroir
   m_SortingLayers:
   - name: Background
     uniqueID: 2674791413
