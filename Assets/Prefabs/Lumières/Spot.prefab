@@ -429,7 +429,7 @@ PrefabInstance:
     - target: {fileID: 1562062004643025848, guid: f29a828168816c742a33026e9601298d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1562062004643025848, guid: f29a828168816c742a33026e9601298d,
         type: 3}
@@ -476,7 +476,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arrow
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7242325042115965952, guid: f29a828168816c742a33026e9601298d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f29a828168816c742a33026e9601298d, type: 3}
 --- !u!4 &7695316846127367021 stripped
 Transform:

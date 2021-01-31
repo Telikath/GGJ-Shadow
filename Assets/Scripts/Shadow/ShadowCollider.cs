@@ -8,6 +8,7 @@ public class ShadowCollider : MonoBehaviour
 {
     public bool showGizmo = true;
     private PolygonCollider2D _myCollider;
+    private PolygonCollider2D _myColliderClone;
     public enum lightTypeEnum { Point, Spotlight, Miroir };
 
     public lightTypeEnum lightType;
@@ -30,11 +31,14 @@ public class ShadowCollider : MonoBehaviour
     void Awake()
     {
         _myCollider = GetComponent<PolygonCollider2D>();
+        _myColliderClone = gameObject.AddComponent(typeof(PolygonCollider2D)) as PolygonCollider2D;
+        _myColliderClone.isTrigger = true;
     }
 
     void Update()
     {
         CastPhysicalShadows();
+        _myColliderClone.points = _myCollider.points;
     }
 
     void CastPhysicalShadows()
@@ -182,6 +186,15 @@ public class ShadowCollider : MonoBehaviour
 
 
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            GameObject.Find("LightTriggerManager").GetComponent<LightTrigger>().isStaying = true;
+        }
+    }
+
 
     void OnDrawGizmos()
     {
