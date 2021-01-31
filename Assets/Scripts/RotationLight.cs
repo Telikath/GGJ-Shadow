@@ -15,17 +15,9 @@ public class RotationLight : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0) && Physics2D.Raycast(mousePos2D, Vector2.zero).collider == GetComponent<Collider2D>())
         {
-            if (!set)
-            {
-                set = true;
-                control.SetActive(true);
-            }
-            else
-            {
-                set = false;
-                control.SetActive(false);
-            }
-
+                set = !set;
+                control.SetActive(set);
+         
         }
 
         /*if (control != null)
