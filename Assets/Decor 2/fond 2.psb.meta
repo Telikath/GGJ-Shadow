@@ -108,7 +108,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -1781, y: 1397}
+    uvTransform: {x: 4, y: 1812}
   - name: sol
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -174,7 +174,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -1088, y: 1812}
+    uvTransform: {x: 4227, y: 1812}
   - name: premier plan gauche
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -208,11 +208,117 @@ ScriptedImporter:
       y: 4
       width: 8000
       height: 1800
-<<<<<<< HEAD
-    spriteID: afceb75cf66b8764c80416c344313c42
-=======
-    spriteID: 6974fa1cf4b43e1419444ecbd67d6f3f
->>>>>>> e50f7027ee374d80f6e6409e5ad26bb50ad8d388
+    spriteID: 54828dea1c8d6fc4384a04f8ea9e1b30
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
+  - name: premier plan droite_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4227
+      y: 1812
+      width: 2685
+      height: 418
+    spriteID: 7a94713bbf05e034a86d0e2e15fc9a49
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1088, y: 1812}
+  - name: premier plan gauche_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3109
+      width: 8000
+      height: 508
+    spriteID: 5a09e59feb9ca8545999204e88bd0ead
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 3109}
+  - name: window_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1812
+      width: 4215
+      height: 1289
+    spriteID: 76261f58ae9fb814cb61a8c80f28f2a2
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1781, y: 1397}
+  - name: sol_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3625
+      width: 8000
+      height: 228
+    spriteID: 0f99a0cfa83aaeb479ba2c4505680fe4
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 3625}
+  - name: "Arri\xE8re-plan_2"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 8000
+      height: 1800
+    spriteID: a4915616fb1b1004f9a0353f184e359a
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -243,42 +349,38 @@ ScriptedImporter:
   mosaicPSDLayers: []
   rigPSDLayers:
   - name: premier plan droite
-    spriteName: premier plan droite
+    spriteName: premier plan droite_1
     isGroup: 0
     parentIndex: -1
-    spriteID: 01e99cbfbb55e5a4aa79df859c25151d
+    spriteID: 7a94713bbf05e034a86d0e2e15fc9a49
     layerID: 103
     mosaicPosition: {x: 4227, y: 1812}
   - name: premier plan gauche
-    spriteName: premier plan gauche
+    spriteName: premier plan gauche_1
     isGroup: 0
     parentIndex: -1
-    spriteID: 7d667fc1a39ceda4cb9bfa519255f07f
+    spriteID: 5a09e59feb9ca8545999204e88bd0ead
     layerID: 83
     mosaicPosition: {x: 4, y: 3109}
   - name: window
-    spriteName: window
+    spriteName: window_1
     isGroup: 0
     parentIndex: -1
-    spriteID: 1f65cb48629a9f84f9f74fe290c406f2
+    spriteID: 76261f58ae9fb814cb61a8c80f28f2a2
     layerID: 75
     mosaicPosition: {x: 4, y: 1812}
   - name: sol
-    spriteName: sol
+    spriteName: sol_1
     isGroup: 0
     parentIndex: -1
-    spriteID: f7354e4bae7739647b218e63b9202248
+    spriteID: 0f99a0cfa83aaeb479ba2c4505680fe4
     layerID: 81
     mosaicPosition: {x: 4, y: 3625}
   - name: "Arri\xE8re-plan"
-    spriteName: "Arri\xE8re-plan_1"
+    spriteName: "Arri\xE8re-plan_2"
     isGroup: 0
     parentIndex: -1
-<<<<<<< HEAD
-    spriteID: afceb75cf66b8764c80416c344313c42
-=======
-    spriteID: 6974fa1cf4b43e1419444ecbd67d6f3f
->>>>>>> e50f7027ee374d80f6e6409e5ad26bb50ad8d388
+    spriteID: a4915616fb1b1004f9a0353f184e359a
     layerID: 1
     mosaicPosition: {x: 4, y: 4}
   characterData:
