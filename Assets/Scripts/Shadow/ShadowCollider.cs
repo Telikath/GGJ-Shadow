@@ -172,7 +172,6 @@ public class ShadowCollider : MonoBehaviour
                         }
                         else
                         {
-                            Vector2 lPos = transform.InverseTransformPoint(new Vector2(ray.x, ray.y));
                             newVerticies.Add(new Vector2(ray.x, ray.y));
                         }
                     }
