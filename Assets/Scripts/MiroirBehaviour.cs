@@ -9,17 +9,19 @@ public class MiroirBehaviour : MonoBehaviour
     [Range (1,10)]
     public int nombreRequisRays = 3;
 
-    public bool miroirState = false;
+    private bool miroirState = false;
+    private bool previousMiroirState = false;
 
 
     void LateUpdate()
     {
-        if (compteurRays < nombreRequisRays)
+        if (compteurRays < nombreRequisRays && previousMiroirState == false)
         {
             GetComponent<Light2D>().enabled = false;
             GetComponent<PolygonCollider2D>().enabled = false;
         }
 
+        previousMiroirState = miroirState;
         compteurRays = 0;
         miroirState = false;
     }

@@ -6,6 +6,7 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class ShadowCollider : MonoBehaviour
 {
+    public bool showGizmo = true;
     private PolygonCollider2D _myCollider;
     public enum lightTypeEnum { Point, Spotlight, Miroir };
 
@@ -106,8 +107,6 @@ public class ShadowCollider : MonoBehaviour
                             {
                                 if (h.collider != null)
                                 {
-                                    Debug.Log(h.collider.gameObject.name.ToString());
-
                                     if (h.collider.gameObject.tag == "Miroir")
                                     {
                                         if (h.collider.transform.parent.gameObject != transform.gameObject &&
@@ -171,7 +170,6 @@ public class ShadowCollider : MonoBehaviour
                         }
                         else
                         {
-                            Vector2 lPos = transform.InverseTransformPoint(new Vector2(ray.x, ray.y));
                             newVerticies.Add(new Vector2(ray.x, ray.y));
                         }
                     }
@@ -187,62 +185,65 @@ public class ShadowCollider : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        switch (lightType)
+        if (showGizmo)
         {
-            case lightTypeEnum.Spotlight:
-                {
-                    Gizmos.color = Color.yellow;
-                    float halfFOV = angle / 2.0f;
-
-                    List<Vector3> rays = new List<Vector3>();
-                    for (float i = -halfFOV; i <= halfFOV; i += halfFOV / numberOfSegments)
+            switch (lightType)
+            {
+                case lightTypeEnum.Spotlight:
                     {
-                        Quaternion rayRotation = Quaternion.AngleAxis(i + coneDirection, Vector3.forward);
-                        rays.Add(rayRotation * transform.right * rayRange);
+                        Gizmos.color = Color.yellow;
+                        float halfFOV = angle / 2.0f;
+
+                        List<Vector3> rays = new List<Vector3>();
+                        for (float i = -halfFOV; i <= halfFOV; i += halfFOV / numberOfSegments)
+                        {
+                            Quaternion rayRotation = Quaternion.AngleAxis(i + coneDirection, Vector3.forward);
+                            rays.Add(rayRotation * transform.right * rayRange);
+                        }
+
+                        foreach (Vector3 ray in rays)
+                        {
+                            Gizmos.DrawRay(new Vector3(transform.position.x, transform.position.y, transform.position.z), ray);
+                        }
+                        break;
                     }
 
-                    foreach (Vector3 ray in rays)
+                case lightTypeEnum.Miroir:
                     {
-                        Gizmos.DrawRay(new Vector3(transform.position.x, transform.position.y, transform.position.z), ray);
-                    }
-                    break;
-                }
+                        Gizmos.color = Color.yellow;
+                        float halfFOV = angle / 2.0f;
 
-            case lightTypeEnum.Miroir:
-                {
-                    Gizmos.color = Color.yellow;
-                    float halfFOV = angle / 2.0f;
+                        List<Vector3> rays = new List<Vector3>();
+                        for (float i = -halfFOV; i <= halfFOV; i += halfFOV / numberOfSegments)
+                        {
+                            Quaternion rayRotation = Quaternion.AngleAxis(i + coneDirection, Vector3.forward);
+                            rays.Add(rayRotation * transform.right * rayRange);
+                        }
 
-                    List<Vector3> rays = new List<Vector3>();
-                    for (float i = -halfFOV; i <= halfFOV; i += halfFOV / numberOfSegments)
-                    {
-                        Quaternion rayRotation = Quaternion.AngleAxis(i + coneDirection, Vector3.forward);
-                        rays.Add(rayRotation * transform.right * rayRange);
-                    }
-
-                    foreach (Vector3 ray in rays)
-                    {
-                        Gizmos.DrawRay(new Vector3(transform.position.x, transform.position.y, transform.position.z), ray);
-                    }
-                    break;
-                }
-
-            case lightTypeEnum.Point:
-                {
-                    Gizmos.color = Color.yellow;
-                    List<Vector3> rays = new List<Vector3>();
-                    for (float i = 0; i <= 360; i += 360 / numberOfSegments)
-                    {
-                        Quaternion rayRotation = Quaternion.AngleAxis(i + coneDirection, Vector3.forward);
-                        rays.Add(rayRotation * transform.right * rayRange);
+                        foreach (Vector3 ray in rays)
+                        {
+                            Gizmos.DrawRay(new Vector3(transform.position.x, transform.position.y, transform.position.z), ray);
+                        }
+                        break;
                     }
 
-                    foreach (Vector3 ray in rays)
+                case lightTypeEnum.Point:
                     {
-                        Gizmos.DrawRay(transform.position, ray);
+                        Gizmos.color = Color.yellow;
+                        List<Vector3> rays = new List<Vector3>();
+                        for (float i = 0; i <= 360; i += 360 / numberOfSegments)
+                        {
+                            Quaternion rayRotation = Quaternion.AngleAxis(i + coneDirection, Vector3.forward);
+                            rays.Add(rayRotation * transform.right * rayRange);
+                        }
+
+                        foreach (Vector3 ray in rays)
+                        {
+                            Gizmos.DrawRay(transform.position, ray);
+                        }
+                        break;
                     }
-                    break;
-                }
+            }
         }
 
     }

@@ -12,7 +12,7 @@ public class PositionControl : MonoBehaviour
     public float angleMin;
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        /*if (Input.GetMouseButton(0))
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePosition.z = 0;
@@ -37,11 +37,27 @@ public class PositionControl : MonoBehaviour
                     }
                     transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
                     myLight.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
                 }
             }
 
+        }*/
+
+        if (Input.GetMouseButton(0))
+        {
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition.z = 0;
+
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), mousePosition);
+
+            if (Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), mousePosition).collider == GetComponent<CircleCollider2D>())
+            {
+
+            }
+
+                //transform.position = (transform.position - otherObject.transform.position).normalized * distance + otherObject.transform.position;
         }
+
+
 
     }
 
