@@ -208,7 +208,11 @@ ScriptedImporter:
       y: 4
       width: 8000
       height: 1800
+<<<<<<< HEAD
     spriteID: afceb75cf66b8764c80416c344313c42
+=======
+    spriteID: 6974fa1cf4b43e1419444ecbd67d6f3f
+>>>>>>> e50f7027ee374d80f6e6409e5ad26bb50ad8d388
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -270,7 +274,11 @@ ScriptedImporter:
     spriteName: "Arri\xE8re-plan_1"
     isGroup: 0
     parentIndex: -1
+<<<<<<< HEAD
     spriteID: afceb75cf66b8764c80416c344313c42
+=======
+    spriteID: 6974fa1cf4b43e1419444ecbd67d6f3f
+>>>>>>> e50f7027ee374d80f6e6409e5ad26bb50ad8d388
     layerID: 1
     mosaicPosition: {x: 4, y: 4}
   characterData:
