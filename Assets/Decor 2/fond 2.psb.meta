@@ -244,6 +244,44 @@ ScriptedImporter:
     spriteID: f7354e4bae7739647b218e63b9202248
     layerID: 81
     mosaicPosition: {x: 4, y: 3625}
+<<<<<<< HEAD:Assets/Decor 2/fond 2.psb.meta
+=======
+  - name: fanions
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 95
+    mosaicPosition: {x: 0, y: 0}
+  - name: fanion copie 5
+    spriteName: fanion copie 5
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 1f5f3ea1f7b49014ba6657feefe0a5cd
+    layerID: 94
+    mosaicPosition: {x: 4227, y: 2238}
+  - name: fanion copie 4
+    spriteName: fanion copie 4
+    isGroup: 0
+    parentIndex: 4
+    spriteID: fc1e2945b6c01b04396086187ab4af26
+    layerID: 93
+    mosaicPosition: {x: 4582, y: 2238}
+  - name: fanion copie 3
+    spriteName: fanion copie 3
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 01b5b0b2af09a814db8087f0d8db3ec7
+    layerID: 92
+    mosaicPosition: {x: 4937, y: 2238}
+  - name: fanion copie 2
+    spriteName: fanion copie 2
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 87b540ffbc4e3b8448040f0c99423fc0
+    layerID: 58
+    mosaicPosition: {x: 5292, y: 2238}
+>>>>>>> 7605bf335751e6c28ac09de7cf7648e231f84d32:Assets/Decor 2/fond 2 (1).psb.meta
   - name: "Arri\xE8re-plan"
     spriteName: "Arri\xE8re-plan"
     isGroup: 0
