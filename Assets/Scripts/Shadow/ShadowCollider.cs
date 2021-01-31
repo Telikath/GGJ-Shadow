@@ -107,8 +107,6 @@ public class ShadowCollider : MonoBehaviour
                             {
                                 if (h.collider != null)
                                 {
-                                    Debug.Log(h.collider.gameObject.name.ToString());
-
                                     if (h.collider.gameObject.tag == "Miroir")
                                     {
                                         if (h.collider.transform.parent.gameObject != transform.gameObject &&
