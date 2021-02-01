@@ -74,7 +74,7 @@ public class ShadowCollider : MonoBehaviour
                         }
                         else
                         {
-                            Vector2 lPos = transform.InverseTransformPoint(new Vector2(ray.x, ray.y));
+                            Vector2 lPos = transform.InverseTransformDirection(new Vector2(ray.x, ray.y));
                             newVerticies.Add(lPos);
                         }
                     }
@@ -127,26 +127,11 @@ public class ShadowCollider : MonoBehaviour
                                         break;
                                     }
                                 }
-                            }
-
-
-                            /*RaycastHit2D[] hitAgain = Physics2D.RaycastAll(new Vector3(transform.position.x, transform.position.y, transform.position.z), ray, rayRange, Miroir);
-                            foreach (RaycastHit2D hi in hitAgain)
-                            {
-                                if (hi.collider != null)
+                                else
                                 {
-                                    if (hi.collider.transform.parent.gameObject != transform.gameObject &&
-                                        hi.collider.transform.gameObject != transform.gameObject)
-                                    {
-                                        Debug.Log(hi.collider.gameObject.name.ToString());
-                                        if (hi.collider.gameObject.tag == "Miroir")
-                                        {
-                                            hi.collider.transform.gameObject.GetComponentInParent<MiroirBehaviour>().HitByRay(); 
-                                        }
-                                        break;
-                                    }
+                                    newVerticies.Add(new Vector2(ray.x, ray.y));
                                 }
-                            }*/
+                            }
                         }
 
                         _myCollider.points = newVerticies.ToArray();
