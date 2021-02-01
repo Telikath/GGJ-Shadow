@@ -7,9 +7,6 @@ using UnityEngine;
 public class ColliderManager : MonoBehaviour
 {
     public GameObject triggerComposite;
-    private CompositeCollider2D composite;
-    private Character player;
-    private int outCount = 0;
 
     public LevelManager levelManager;
 
@@ -26,8 +23,6 @@ public class ColliderManager : MonoBehaviour
 
             }
         }
-        
-        composite = GetComponent<CompositeCollider2D>();
     }
 
 

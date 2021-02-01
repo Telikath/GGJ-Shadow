@@ -291,25 +291,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94439559fe26e564ea546bd3ceb4962a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showGizmo: 1
+  showGizmo: 0
   lightType: 0
   newVerticies: []
   angle: 33
-  rayRange: 2.6
+  rayRange: 2
   coneDirection: 180
-  numberOfSegments: 86
+  numberOfSegments: 48
   CastableShadow:
     serializedVersion: 2
     m_Bits: 2952790016
   Miroir:
     serializedVersion: 2
     m_Bits: 2147483648
-  Border:
-    serializedVersion: 2
-    m_Bits: 536870912
-  Lamp:
-    serializedVersion: 2
-    m_Bits: 1073741824
 --- !u!114 &7894124718519006857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,23 +317,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LightType: 3
-  m_BlendStyleIndex: 0
+  m_BlendStyleIndex: 1
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.2
+  m_Color: {r: 1, g: 0.5990566, b: 0.5990566, a: 1}
+  m_Intensity: 1.91
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000f5136e9f892e2424
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 1
   m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
+  m_AlphaBlendOnOverlap: 1
   m_ShadowIntensity: 1
   m_ShadowVolumeIntensity: 0
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.69
-  m_PointLightOuterRadius: 2.2
-  m_PointLightDistance: 1.56
+  m_PointLightOuterRadius: 2
+  m_PointLightDistance: 3.09
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 48
   m_ShapeLightParametricAngleOffset: 0

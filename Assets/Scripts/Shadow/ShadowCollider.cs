@@ -24,8 +24,6 @@ public class ShadowCollider : MonoBehaviour
     public int numberOfSegments = 6;
     public LayerMask CastableShadow;
     public LayerMask Miroir;
-    public LayerMask Border;
-    public LayerMask Lamp;
 
 
     void Awake()
@@ -36,6 +34,11 @@ public class ShadowCollider : MonoBehaviour
     }
 
     void Update()
+    {
+        
+    }
+
+    private void LateUpdate()
     {
         CastPhysicalShadows();
         _myColliderClone.points = _myCollider.points;
@@ -117,6 +120,8 @@ public class ShadowCollider : MonoBehaviour
                                         h.collider.transform.gameObject != transform.gameObject)
                                         {
                                             h.collider.transform.gameObject.GetComponentInParent<MiroirBehaviour>().HitByRay();
+                                            Vector2 lPos = transform.InverseTransformPoint(h.point);
+                                            newVerticies.Add(lPos);
                                             break;
                                         }
                                     }
@@ -129,7 +134,8 @@ public class ShadowCollider : MonoBehaviour
                                 }
                                 else
                                 {
-                                    newVerticies.Add(new Vector2(ray.x, ray.y));
+                                    Vector2 lPos = transform.InverseTransformDirection(new Vector2(ray.x, ray.y));
+                                    newVerticies.Add(lPos);
                                 }
                             }
                         }

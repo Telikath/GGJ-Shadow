@@ -41,8 +41,8 @@ TagManager:
   - Pushables
   - Stairs
   - CastableShadow
-  - Border
   - Lamp
+  - 
   - Miroir
   m_SortingLayers:
   - name: Background
