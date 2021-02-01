@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2137c78fd183acf4f99e7ab50202cb91
+guid: 86cbacb025e11c34aa187002e154d481
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -87,29 +87,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Layer 1
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 1045
-      y: 4
-      width: 0
-      height: 0
-    spriteID: 49e1a48af6593a74585ad438ffe93fea
-    internalID: 0
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 12, y: -353}
-  - name: Layer 2
+  - name: Layer 3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -118,9 +96,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 1033
-      height: 357
-    spriteID: 7cd76d29819a4bf45a42aa06bbbb6ae0
+      width: 780
+      height: 359
+    spriteID: 97169efa124fe4841af87eb706657e8e
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -136,33 +114,26 @@ ScriptedImporter:
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
   importHiddenLayers: 0
-  importedTextureWidth: 2048
-  importedTextureHeight: 2048
-  documentSize: {x: 1033, y: 357}
+  importedTextureWidth: 1024
+  importedTextureHeight: 512
+  documentSize: {x: 780, y: 359}
   paperDollMode: 0
   keepDupilcateSpriteName: 0
   spriteCategoryList:
     categories: []
-  textureActualWidth: 2048
-  textureActualHeight: 2048
+  textureActualWidth: 1024
+  textureActualHeight: 512
   spritePackingTag: 
   resliceFromLayer: 0
   characterMode: 1
   mosaicPSDLayers: []
   rigPSDLayers:
-  - name: Layer 1
-    spriteName: Layer 1
+  - name: Layer 3
+    spriteName: Layer 3
     isGroup: 0
     parentIndex: -1
-    spriteID: 49e1a48af6593a74585ad438ffe93fea
-    layerID: 23
-    mosaicPosition: {x: 1045, y: 4}
-  - name: Layer 2
-    spriteName: Layer 2
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 7cd76d29819a4bf45a42aa06bbbb6ae0
-    layerID: 24
+    spriteID: 97169efa124fe4841af87eb706657e8e
+    layerID: 28
     mosaicPosition: {x: 4, y: 4}
   characterData:
     bones: []
@@ -170,7 +141,7 @@ ScriptedImporter:
     dimension: {x: 0, y: 0}
     characterGroups: []
   generateGOHierarchy: 0
-  textureAssetName: trou Texture
-  prefabAssetName: trou Prefab
-  spriteLibAssetName: trou Sprite Lib
+  textureAssetName: hole Texture
+  prefabAssetName: hole Prefab
+  spriteLibAssetName: hole Sprite Lib
   secondarySpriteTextures: []
