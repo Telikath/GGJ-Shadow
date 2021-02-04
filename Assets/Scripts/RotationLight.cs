@@ -43,7 +43,6 @@ public class RotationLight : MonoBehaviour
             }
             else if (transform.rotation.eulerAngles.z <= minAngle)
             {
-                Debug.Log(transform.rotation.eulerAngles.z.ToString());
                 transform.rotation = Quaternion.Euler(0.0f, 0.0f, minAngle);
             }
 

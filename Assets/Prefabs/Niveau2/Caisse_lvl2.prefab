@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5885240522676153240}
   - component: {fileID: 5628027788867675402}
   m_Layer: 0
-  m_Name: Caisse 1
+  m_Name: Caisse_lvl2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,9 +26,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6516153065403274357}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.68, y: -3.18, z: 0}
-  m_LocalScale: {x: 0.30956, y: 0.30956, z: 0.30956}
+  m_LocalScale: {x: 0.6825027, y: 0.6825027, z: 0.6825027}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
-  m_SelfShadows: 1
+  m_SelfShadows: 0
   m_ApplyToSortingLayers: f5136e9f00000000892e24240d6ced9e35acc32343a3066b93b10a3863f733c1
   m_ShapePath:
   - {x: -2.4507344, y: -1.2000898, z: 0}
@@ -137,7 +137,7 @@ MonoBehaviour:
   - {x: -2.454293, y: 2.2325845, z: 0}
   m_ShapePathHash: 140932033
   m_Mesh: {fileID: 0}
-  m_InstanceId: 37420
+  m_InstanceId: -1244
 --- !u!61 &5628027788867675402
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -151,7 +151,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.00000047683716, y: 0.001038909}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -162,5 +162,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.98, y: 4.95}
+  m_Size: {x: 4.9269676, y: 4.912304}
   m_EdgeRadius: 0

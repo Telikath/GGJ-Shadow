@@ -11,6 +11,8 @@ public class ShadowCollider : MonoBehaviour
     private PolygonCollider2D _myColliderClone;
     public enum lightTypeEnum { Point, Spotlight, Miroir };
 
+    private bool mirorNotHitted = false;
+
     public lightTypeEnum lightType;
 
     public List<Vector2> newVerticies = new List<Vector2>();
@@ -72,7 +74,7 @@ public class ShadowCollider : MonoBehaviour
                             newVerticies.Add(lPos);
                             if (hit.collider.gameObject.tag == "Miroir")
                             {
-                                hit.collider.transform.gameObject.GetComponentInParent<MiroirBehaviour>().HitByRay();
+                                hit.collider.transform.parent.gameObject.GetComponentInChildren<MiroirBehaviour>().HitByRay();
                             }
                         }
                         else
@@ -109,34 +111,37 @@ public class ShadowCollider : MonoBehaviour
 
                         foreach (Vector3 ray in rays)
                         {
+                            mirorNotHitted = false;
                             RaycastHit2D[] hit = Physics2D.RaycastAll(new Vector3(transform.position.x, transform.position.y, transform.position.z), ray, rayRange, CastableShadow);
                             foreach (RaycastHit2D h in hit)
                             {
                                 if (h.collider != null)
                                 {
-                                    if (h.collider.gameObject.tag == "Miroir")
+                                    if (mirorNotHitted == false)
                                     {
-                                        if (h.collider.transform.parent.gameObject != transform.gameObject &&
-                                        h.collider.transform.gameObject != transform.gameObject)
+                                        if (h.collider.gameObject.tag == "Miroir")
                                         {
-                                            h.collider.transform.gameObject.GetComponentInParent<MiroirBehaviour>().HitByRay();
+                                            if (h.collider.transform.parent.gameObject != transform.parent.gameObject)
+                                            {
+                                                h.collider.transform.parent.gameObject.GetComponentInChildren<MiroirBehaviour>().HitByRay();
+                                                Vector2 lPos = transform.InverseTransformPoint(h.point);
+                                                newVerticies.Add(lPos);
+                                                mirorNotHitted = true;
+                                            }
+                                        }
+                                        else
+                                        {
                                             Vector2 lPos = transform.InverseTransformPoint(h.point);
                                             newVerticies.Add(lPos);
-                                            break;
+                                            mirorNotHitted = true;
                                         }
                                     }
-                                    else
-                                    {
-                                        Vector2 lPos = transform.InverseTransformPoint(h.point);
-                                        newVerticies.Add(lPos);
-                                        break;
-                                    }
                                 }
-                                else
-                                {
-                                    Vector2 lPos = transform.InverseTransformDirection(new Vector2(ray.x, ray.y));
-                                    newVerticies.Add(lPos);
-                                }
+                            }
+                            if (mirorNotHitted == false)
+                            {
+                                Vector2 lPos = transform.InverseTransformDirection(new Vector2(ray.x, ray.y));
+                                newVerticies.Add(lPos);
                             }
                         }
 

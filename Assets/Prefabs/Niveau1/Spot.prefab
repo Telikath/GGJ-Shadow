@@ -79,9 +79,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showGizmo: 0
   lightType: 1
-  newVerticies: []
+  newVerticies:
+  - {x: 0, y: 0}
+  - {x: 12.871173, y: -5.331416}
+  - {x: 13.330649, y: -5.117158}
+  - {x: 13.813966, y: -4.8917837}
+  - {x: 14.323745, y: -4.6540685}
+  - {x: 14.862987, y: -4.4026175}
+  - {x: 14.932139, y: -4.0010557}
+  - {x: 14.713612, y: -3.532427}
+  - {x: 14.504006, y: -3.0829215}
+  - {x: 14.302509, y: -2.6508148}
+  - {x: 14.183883, y: -2.2465065}
+  - {x: 14.817975, y: -1.950824}
+  - {x: 15.304456, y: -1.6085637}
+  - {x: 15.108853, y: -1.1890934}
+  - {x: 14.918962, y: -0.78186923}
+  - {x: 14.734286, y: -0.3858306}
+  - {x: 14.55437, y: -0.0000005736947}
+  - {x: 14.96912, y: 0.39198068}
+  - {x: 15.917457, y: 0.8341975}
+  - {x: 22.859705, y: 1.7990983}
+  - {x: 17.90342, y: 1.8817254}
+  - {x: 17.362545, y: 2.2858224}
+  - {x: 17.039251, y: 2.6987522}
+  - {x: 16.772253, y: 3.1085527}
+  - {x: 16.538809, y: 3.5154316}
+  - {x: 16.926508, y: 4.063696}
+  - {x: 28.011848, y: 7.505753}
+  - {x: 27.80577, y: 8.236446}
+  - {x: 27.580639, y: 8.961494}
+  - {x: 27.336603, y: 9.680399}
+  - {x: 27.07383, y: 10.39267}
+  - {x: 26.792507, y: 11.09782}
   angle: 45
-  rayRange: 26.9
+  rayRange: 29
   coneDirection: 0
   numberOfSegments: 15
   CastableShadow:
@@ -111,7 +143,7 @@ MonoBehaviour:
   m_ApplyToSortingLayers: 00000000f5136e9f892e2424
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 1
-  m_LightOrder: 0
+  m_LightOrder: 2
   m_AlphaBlendOnOverlap: 1
   m_ShadowIntensity: 1
   m_ShadowVolumeIntensity: 0
@@ -235,7 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBeRotate: 1
   maxAngle: 335
-  minAngle: 248
+  minAngle: 25
   showGizmo: 0
 --- !u!58 &7265490814631393689
 CircleCollider2D:
