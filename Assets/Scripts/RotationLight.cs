@@ -11,11 +11,11 @@ public class RotationLight : MonoBehaviour
     public bool canBeRotate = true;
     
 
-    [Range(0,359)]
-    public int maxAngle = 100;
+    [Range(25,335)]
+    public int maxAngle = 335;
 
-    [Range(0, 359)]
-    public int minAngle = 0;
+    [Range(25, 335)]
+    public int minAngle = 25;
 
     public bool showGizmo = true;
 
@@ -36,14 +36,17 @@ public class RotationLight : MonoBehaviour
             {
                 RotateLight();
             }
-            if (transform.rotation.eulerAngles.z % 360 >= maxAngle)
+
+            if (transform.rotation.eulerAngles.z >= maxAngle)
             {
                 transform.rotation = Quaternion.Euler(0.0f, 0.0f, maxAngle);
             }
-            else if (transform.rotation.eulerAngles.z % 360 <= minAngle)
+            else if (transform.rotation.eulerAngles.z <= minAngle)
             {
+                Debug.Log(transform.rotation.eulerAngles.z.ToString());
                 transform.rotation = Quaternion.Euler(0.0f, 0.0f, minAngle);
             }
+
         }
 
     }
@@ -90,16 +93,16 @@ public class RotationLight : MonoBehaviour
         if (showGizmo)
         {
             Gizmos.color = Color.yellow;
-            Quaternion rayRotation = Quaternion.AngleAxis(minAngle, Vector3.forward);
+            Quaternion rayRotation = Quaternion.AngleAxis(minAngle - transform.rotation.eulerAngles.z, Vector3.forward);
             Gizmos.DrawRay(transform.position, rayRotation * transform.right * gizmoLineSize);
 
-            rayRotation = Quaternion.AngleAxis(maxAngle, Vector3.forward);
+            rayRotation = Quaternion.AngleAxis(maxAngle - transform.rotation.eulerAngles.z, Vector3.forward);
             Gizmos.DrawRay(transform.position, rayRotation * transform.right * gizmoLineSize);
 
             Gizmos.color = Color.yellow;
             for (int i = minAngle; i <= maxAngle; i += 2)
             {
-                rayRotation = Quaternion.AngleAxis(i, Vector3.forward);
+                rayRotation = Quaternion.AngleAxis(i - transform.rotation.eulerAngles.z, Vector3.forward);
                 Gizmos.DrawRay(transform.position, rayRotation * transform.right * gizmoLineSize);
             }
         }
