@@ -112,7 +112,7 @@ ScriptedImporter:
   platformSettings: []
   mosaicLayers: 1
   documentPivot: {x: 0, y: 0}
-  documentAlignment: 7
+  documentAlignment: 2
   importHiddenLayers: 0
   importedTextureWidth: 512
   importedTextureHeight: 512

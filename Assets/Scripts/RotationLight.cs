@@ -9,7 +9,7 @@ public class RotationLight : MonoBehaviour
     private bool stateRotation;
     private int gizmoLineSize = 2;
     public bool canBeRotate = true;
-    
+
 
     [Range(25,335)]
     public int maxAngle = 335;
@@ -37,14 +37,6 @@ public class RotationLight : MonoBehaviour
                 RotateLight();
             }
 
-            if (transform.rotation.eulerAngles.z >= maxAngle)
-            {
-                transform.rotation = Quaternion.Euler(0.0f, 0.0f, maxAngle);
-            }
-            else if (transform.rotation.eulerAngles.z <= minAngle)
-            {
-                transform.rotation = Quaternion.Euler(0.0f, 0.0f, minAngle);
-            }
 
         }
 
@@ -55,20 +47,19 @@ public class RotationLight : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !stateRotation)
         {
-            if (Physics2D.Raycast(mousePos2D, Vector2.zero).collider == GetComponent<CircleCollider2D>()
-                || Physics2D.Raycast(mousePos2D, Vector2.zero).collider == arrowCollider)
+            if (Physics2D.Raycast(mousePos2D, Vector2.zero).collider == GetComponent<CircleCollider2D>())
             {
                 stateRotation = true;
             }
-            else
-            {
-                stateRotation = false;
-            }
-            arrowCollider.gameObject.SetActive(stateRotation);
+        }
+        else if(Input.GetMouseButtonDown(0) && stateRotation)
+        {
+            stateRotation = false;
         }
 
+        arrowCollider.gameObject.SetActive(stateRotation);
     }
 
     void RotateLight()
@@ -77,14 +68,19 @@ public class RotationLight : MonoBehaviour
         Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
 
         RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
-        if (Input.GetMouseButton(0) && Physics2D.Raycast(mousePos2D, Vector2.zero).collider == arrowCollider)
-        {
-            Vector2 diff = hit.point - new Vector2(transform.position.x, transform.position.y);
-            diff.Normalize();
 
-            float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0f, 0f, (rot_z ));
+        Vector2 diff = hit.point - new Vector2(transform.position.x, transform.position.y);
+        diff.Normalize();
+
+        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+
+        Vector3 finalRot = Quaternion.Euler(0f, 0f, rot_z).eulerAngles;
+
+        if(finalRot.z < maxAngle && finalRot.z > minAngle)
+        {
+          transform.rotation = Quaternion.Euler(0f, 0f, rot_z);
         }
+
     }
 
     void OnDrawGizmos()
